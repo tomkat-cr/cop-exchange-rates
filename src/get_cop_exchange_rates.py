@@ -58,79 +58,6 @@ def get_formatted_date():
     return formatted_date
 
 
-def get_currency_section_value_2(soup, api_response, id_name, currency):
-    error_message = []
-    error_flag = False
-    exchange_value = None
-    currency_symbol = None
-    effective_date = None
-    # Locate the element with specified id
-    try:
-        currentSection = soup.find("div", {"id": id_name})
-    except Exception as err:
-        error_flag = True
-        error_message = f'id "{id_name}" not found | {str(err)}'
-    # Scrape the first <div> inside it to get the exchange rate
-    if not error_flag:
-        try:
-            first_div = currentSection.find_all("div")[0]
-        except Exception as err:
-            error_flag = True
-            error_message = f'1st <div> not found | {str(err)}'
-    # Scrape the "data-exchange-rate" attribute
-    if not error_flag:
-        try:
-            exchange_value = first_div['data-exchange-rate'].strip()
-        except Exception as err:
-            error_flag = True
-            error_message = 'The "data-exchange-rate" attribute' + \
-                f' in 1st <div> not found | {str(err)}'
-    # Scrape the second <div> to get the effective date
-    if not error_flag:
-        try:
-            second_div = currentSection.find_all("div")[0]
-        except Exception as err:
-            error_flag = True
-            error_message = f'2nd <div> not found | {str(err)}'
-    # Scrape the <span> element, get the text attribute
-    # with the effective date/time
-    if not error_flag:
-        try:
-            effective_date = second_div.find("span").text.strip()
-            effective_date = effective_date.replace(' · ', '')
-        except Exception as err:
-            error_flag = True
-            error_message = 'The <span> in 2nd <div> not found' + \
-                f' trying to get the effective date/time | {str(err)}'
-    # Scrape the 2nd <div> element inside the 1st <div>
-    if not error_flag:
-        try:
-            second_div_1st_div = first_div.find_all("div")[1]
-        except Exception as err:
-            error_flag = True
-            error_message = f'The <span> in 2nd <div> not found | {str(err)}'
-    # Scrape the 2nd <span> element, get the text attribute with curreny name
-    if not error_flag:
-        try:
-            currency_symbol = second_div_1st_div.find_all(
-                "span"
-            )[1].text.strip()
-        except Exception as err:
-            error_flag = True
-            error_message = 'The <span> in 2nd <div> not found'
-            f', trying to get the currency name | {str(err)}'
-
-    api_response['data'][currency] = dict()
-    api_response['data'][currency]['unit'] = currency_symbol
-    api_response['data'][currency]['value'] = exchange_value
-    api_response['data'][currency]['effective_date'] = effective_date
-
-    if error_flag:
-        api_response['error'] = True
-        api_response['error_message'] = f'ERROR(s) on id "{id_name}"'
-        api_response['data'][currency]['error_message'] = error_message
-
-
 def get_currency_section_value(soup_root, api_response, id_name):
     error_message = []
     error_flag = False
@@ -209,7 +136,6 @@ def get_currency_section_value(soup_root, api_response, id_name):
 
 def get_google_cop():
     api_response = get_api_standard_response()
-    # url = "https://www.google.com/search?q=dolar+cop"
     url = "https://www.google.com/finance/quote/USD-COP"
     try:
         response = requests.get(url=url)
@@ -230,12 +156,6 @@ def get_google_cop():
     soup = BeautifulSoup(response.text, "html.parser")
     # print(f'>>--> url = {url}')
     # print(f'>>--> soup.body = {str(soup.body)}')
-    # get_currency_section_value_2(
-    #     soup,
-    #     api_response,
-    #     "knowledge-currency__updatable-data-column",
-    #     'cop'
-    # )
     get_currency_section_value(
         soup,
         api_response,

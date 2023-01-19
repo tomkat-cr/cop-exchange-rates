@@ -3,13 +3,11 @@
 ## English
 
 API to get Colombian Pesos currency exchange rates with Python.<br/>
-Includes daily currency exchange rates of US Dollar from official government API and other sources like Google.
+Includes daily currency exchange rates of US Dollar from official government API ([datos.gov.co](https://www.datos.gov.co/)) and other sources like Google Finance ([google.com/finance](https://www.google.com/finance/quote/USD-COP)).
 
 ## Production API call
 
-```url
-https://cop-exchange-rates.vercel.app/get_exchange_rates
-```
+[https://cop-exchange-rates.vercel.app/get_exchange_rates](https://cop-exchange-rates.vercel.app/get_exchange_rates)
 
 ```json
 {
@@ -44,9 +42,7 @@ https://cop-exchange-rates.vercel.app/get_exchange_rates
 }
 ```
 
-```url
-https://cop-exchange-rates.vercel.app/get_google_cop
-```
+[https://cop-exchange-rates.vercel.app/get_google_cop](https://cop-exchange-rates.vercel.app/get_google_cop)
 
 ```json
 {
@@ -61,9 +57,7 @@ https://cop-exchange-rates.vercel.app/get_google_cop
 }
 ```
 
-```url
-https://cop-exchange-rates.vercel.app/get_official_cop
-```
+[https://cop-exchange-rates.vercel.app/get_official_cop](https://cop-exchange-rates.vercel.app/get_official_cop)
 
 ```json
 {
@@ -95,14 +89,12 @@ API stands for "Application Programming Interface". In the context of APIs, the 
 
 ## Spanish
 
-API de contización del dolar respectoa los Pesos Colombianos en Python.<br/>
-Incluye actualizaciones de cambio monetarias diarias del dólar de fuentes oficiales de Colombia [datos.gov.co/](https://www.datos.gov.co/) y otras fuentes como Google.
+API de contización del dolar respecto al Peso Colombiano en Python.<br/>
+Incluye actualizaciones de cambio monetarias diarias del dólar de fuentes oficiales de Colombia ([datos.gov.co](https://www.datos.gov.co/)) y otras fuentes como Google Finance ([google.com/finance](https://www.google.com/finance/quote/USD-COP)).
 
 ## Llamada a la API de producción
 
-```url
-https://cop-exchange-rates.vercel.app/get_exchange_rates
-```
+[https://cop-exchange-rates.vercel.app/get_exchange_rates](https://cop-exchange-rates.vercel.app/get_exchange_rates)
 
 ```json
 {
@@ -118,19 +110,54 @@ https://cop-exchange-rates.vercel.app/get_exchange_rates
         "vigenciadesde": "2023-01-18T00:00:00.000",
         "vigenciahasta": "2023-01-18T00:00:00.000",
         ":id": "row-bebx~s2c5-95zv"
-      }
+      },
+      "run_timestamp":"2023-01-19 02:56:57 UTC"
     },
     "google_cop": {
-      "error": false,
-      "error_message": "",
-      "data": {
-        "value": "4703.48",
-        "unit": "COP",
-        "run_timestamp": "2023-01-18 11:55:42 UTC"
+      {
+        "error": false,
+        "error_message": "",
+        "data": {
+          "unit": "USD / COP",
+          "value": "4703.4800",
+          "effective_date": "Jan 19, 12:26:00 AM UTC"
+        },
+        "run_timestamp":"2023-01-19 02:56:57 UTC"
       }
     },
-    "run_timestamp": "2023-01-18 11:55:42 UTC"
   }
+}
+```
+
+[https://cop-exchange-rates.vercel.app/get_google_cop](https://cop-exchange-rates.vercel.app/get_google_cop)
+
+```json
+{
+  "error": false,
+  "error_message": "",
+  "data": {
+    "unit": "USD / COP",
+    "value": "4703.4800",
+    "effective_date": "Jan 19, 12:26:00 AM UTC"
+  },
+  "run_timestamp":"2023-01-19 02:56:57 UTC"
+}
+```
+
+[https://cop-exchange-rates.vercel.app/get_official_cop](https://cop-exchange-rates.vercel.app/get_official_cop)
+
+```json
+{
+  "error": false,
+  "error_message": "",
+  "data": {
+      "valor": "4702.67",
+      "unidad": "COP",
+      "vigenciadesde": "2023-01-19T00:00:00.000",
+      "vigenciahasta": "2023-01-19T00:00:00.000",
+      ":id": "row-gfv7-yqt5-kppv"
+  },
+  "run_timestamp": "2023-01-19 03:00:12 UTC"
 }
 ```
 
