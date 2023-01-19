@@ -18,11 +18,12 @@ Includes daily currency exchange rates of US Dollar from official government API
       "error": false,
       "error_message": "",
       "data": {
-        "valor": "4691.09",
+        "valor": "4702.67",
         "unidad": "COP",
-        "vigenciadesde": "2023-01-18T00:00:00.000",
-        "vigenciahasta": "2023-01-18T00:00:00.000",
-        ":id": "row-bebx~s2c5-95zv"
+        "vigenciadesde": "2023-01-19T00:00:00.000",
+        "vigenciahasta": "2023-01-19T00:00:00.000",
+        ":id": "row-bebx~s2c5-95zv",
+        "bank_value": "4727.59"
       },
       "run_timestamp":"2023-01-19 02:56:57 UTC"
     },
@@ -33,6 +34,7 @@ Includes daily currency exchange rates of US Dollar from official government API
         "data": {
           "unit": "USD / COP",
           "value": "4703.4800",
+          "bank_value": "4750.51",
           "effective_date": "Jan 19, 12:26:00 AM UTC"
         },
         "run_timestamp":"2023-01-19 02:56:57 UTC"
@@ -51,6 +53,7 @@ Includes daily currency exchange rates of US Dollar from official government API
   "data": {
     "unit": "USD / COP",
     "value": "4703.4800",
+    "bank_value": "4750.51",
     "effective_date": "Jan 19, 12:26:00 AM UTC"
   },
   "run_timestamp":"2023-01-19 02:56:57 UTC"
@@ -68,11 +71,14 @@ Includes daily currency exchange rates of US Dollar from official government API
       "unidad": "COP",
       "vigenciadesde": "2023-01-19T00:00:00.000",
       "vigenciahasta": "2023-01-19T00:00:00.000",
-      ":id": "row-gfv7-yqt5-kppv"
+      ":id": "row-bebx~s2c5-95zv",
+      "bank_value": "4727.59"
   },
   "run_timestamp": "2023-01-19 03:00:12 UTC"
 }
 ```
+
+* NOTE: `bank_value` is the approximate value offered on international wire transfers.
 
 ## What is an API?
 
@@ -85,7 +91,6 @@ API stands for "Application Programming Interface". In the context of APIs, the 
 <br/>
 
 ------------------------------
-<br/>
 
 ## Spanish
 
@@ -160,6 +165,8 @@ Incluye actualizaciones de cambio monetarias diarias del dólar de fuentes ofici
   "run_timestamp": "2023-01-19 03:00:12 UTC"
 }
 ```
+
+* NOTA: `bank_value` es el valor aproximado ofrecido en las transferencias internacionales.
 
 ## ¿Qué es una API?
 

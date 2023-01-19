@@ -58,6 +58,12 @@ def get_formatted_date():
     return formatted_date
 
 
+def get_bank_value(value_string, perc_param_name):
+    value = float(value_string)
+    perc_increase = float(os.environ.get(perc_param_name, 0.00))
+    return f'{(value+((value*perc_increase)/100)):.2f}'
+
+
 def get_currency_section_value(soup_root, api_response, id_name):
     error_message = []
     error_flag = False
@@ -126,6 +132,10 @@ def get_currency_section_value(soup_root, api_response, id_name):
     api_response['data'] = dict()
     api_response['data']['unit'] = currency_symbol
     api_response['data']['value'] = exchange_value
+    api_response['data']['bank_value'] = get_bank_value(
+        exchange_value, 
+        'BANK_PERCENT_INCREASE_GOOGLE'
+    )
     api_response['data']['effective_date'] = effective_date
 
     if error_flag:
@@ -183,6 +193,12 @@ def get_official_cop():
             api_response['error'] = True
             api_response['error_message'] = 'ERROR reading ' + \
                 'datos.gov.co USD/COP API'
+    if not api_response['error']:
+        api_response['data']['bank_value'] = get_bank_value(
+            api_response['data']['valor'],
+            'BANK_PERCENT_INCREASE_OFFICIAL'
+        )
+
     api_response['run_timestamp'] = get_formatted_date()
     report_error_to_tg_group(api_response)
     return api_response
