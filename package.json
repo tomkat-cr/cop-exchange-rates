@@ -1,0 +1,33 @@
+{
+  "name": "cop-exchange-rates",
+  "version": "1.0.0",
+  "description": "API to get Colombian Pesos currency exchange rates with Python",
+  "main": "src/index.py",
+  "scripts": {
+    "deactivate": "sh run.sh deactivate",
+    "pipfile": "sh run.sh pipfile",
+    "clean": "sh run.sh clean",
+    "test": "sh run.sh test",
+    "run:cli": "sh run.sh run_module",
+    "run:dev": "sh run.sh run",
+    "run": "sh run.sh",
+    "deploy": "sh run.sh run_module",
+    "rename_staging": "sh run.sh rename_staging"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomkat-cr/cop-exchange-rates.git"
+  },
+  "keywords": [
+    "python",
+    "api",
+    "python3",
+    "webscraping"
+  ],
+  "author": "Carlos J. Ramirez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tomkat-cr/cop-exchange-rates/issues"
+  },
+  "homepage": "https://github.com/tomkat-cr/cop-exchange-rates#readme"
+}

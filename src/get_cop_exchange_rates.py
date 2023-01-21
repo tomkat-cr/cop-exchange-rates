@@ -136,6 +136,9 @@ def get_currency_section_value(soup_root, api_response, id_name):
         exchange_value, 
         'BANK_PERCENT_INCREASE_GOOGLE'
     )
+    api_response['data']['bank_value_percent'] = os.environ.get(
+        'BANK_PERCENT_INCREASE_GOOGLE', 0.00
+    )
     api_response['data']['effective_date'] = effective_date
 
     if error_flag:
@@ -197,6 +200,9 @@ def get_official_cop():
         api_response['data']['bank_value'] = get_bank_value(
             api_response['data']['valor'],
             'BANK_PERCENT_INCREASE_OFFICIAL'
+        )
+        api_response['data']['bank_value_percent'] = os.environ.get(
+            'BANK_PERCENT_INCREASE_OFFICIAL', 0.00
         )
 
     api_response['run_timestamp'] = get_formatted_date()

@@ -17,7 +17,8 @@ if [ "$1" = "deactivate" ]; then
     cd ${APP_DIR} ;
     deactivate ;
 fi
-if [[ "$1" != "deactivate" && "$1" != "pipfile" && "$1" != "clean" && "$1" != "test" ]]; then
+# if [[ "$1" != "deactivate" && "$1" != "pipfile" && "$1" != "clean" && "$1" != "test" ]]; then
+if [[ "$1" != "deactivate" && "$1" != "pipfile" && "$1" != "clean" ]]; then
     python3 -m venv ${APP_DIR} ;
     . ${APP_DIR}/bin/activate ;
     cd ${APP_DIR} ;
@@ -44,6 +45,13 @@ if [ "$1" = "clean" ]; then
     rm -rf lib ;
     rm -rf pyvenv.cfg ;
     ls -lah
+fi
+
+if [[ "$1" = "test" ]]; then
+    # echo "Error: no test specified" && exit 1
+    echo "Run test..."
+    python -m pytest
+    echo "Done..."
 fi
 
 if [[ "$1" = "run_module" || "$1" = "" ]]; then
