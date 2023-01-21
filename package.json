@@ -11,7 +11,7 @@
     "run:cli": "sh run.sh run_module",
     "run:dev": "sh run.sh run",
     "run": "sh run.sh",
-    "deploy": "sh run.sh run_module",
+    "deploy": "sh run.sh deploy",
     "rename_staging": "sh run.sh rename_staging"
   },
   "repository": {
