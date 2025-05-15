@@ -8,6 +8,7 @@
     "pipfile": "sh run.sh pipfile",
     "clean": "sh run.sh clean",
     "test": "sh run.sh test",
+    "run:ngrok": "sh run.sh run_ngrok",
     "run:cli": "sh run.sh run_module",
     "run:dev": "sh run.sh run",
     "run": "sh run.sh",
@@ -29,5 +30,8 @@
   "bugs": {
     "url": "https://github.com/tomkat-cr/cop-exchange-rates/issues"
   },
-  "homepage": "https://github.com/tomkat-cr/cop-exchange-rates#readme"
+  "homepage": "https://github.com/tomkat-cr/cop-exchange-rates#readme",
+  "devDependencies": {
+    "ngrok": "^4.3.3"
+  }
 }

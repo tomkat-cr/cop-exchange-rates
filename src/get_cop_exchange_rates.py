@@ -15,7 +15,7 @@ import requests
 def send_tg_message(message):
     try:
         bot_token = os.environ['TELEGRAM_BOT_TOKEN']
-        user_id = os.environ['OWNER']
+        user_id = os.environ['TELEGRAM_CHAT_ID']
         # Send the message
         url = 'https://api.telegram.org/bot' + bot_token + \
             '/sendMessage?chat_id=' + user_id + '&text=' + str(message)

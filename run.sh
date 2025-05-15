@@ -13,6 +13,9 @@ fi
 if [ "$ENV_FILESPEC" != "" ]; then
     set -o allexport; source ${ENV_FILESPEC}; set +o allexport ;
 fi
+if [ "$PORT" = "" ]; then
+    PORT="5001"
+fi
 if [ "$1" = "deactivate" ]; then
     cd ${APP_DIR} ;
     deactivate ;
@@ -44,6 +47,7 @@ if [ "$1" = "clean" ]; then
     rm -rf include ;
     rm -rf lib ;
     rm -rf pyvenv.cfg ;
+    rm -rf ../.vercel/cache ;
     ls -lah
 fi
 
@@ -54,20 +58,30 @@ if [[ "$1" = "test" ]]; then
     echo "Done..."
 fi
 
+if [ "$1" = "run_ngrok" ]; then
+    ../node_modules/ngrok/bin/ngrok http $PORT
+fi
+
 if [[ "$1" = "run_module" || "$1" = "" ]]; then
     echo "Run module only..."
-    python index.py cli
+    echo "pwd: $(pwd)"
+    # cd ..
+    python -m index cli
     echo "Done..."
 fi
 
-if [[ "$1" = "run" || "$1" = "" ]]; then
+# if [[ "$1" = "run" || "$1" = "" ]]; then
+if [ "$1" = "run" ]; then
     echo "Run..."
-    vercel dev --listen 0.0.0.0:5001 ;
+    cd ..
+    vercel dev --listen 0.0.0.0:$PORT ;
     echo "Done..."
 fi
 if [ "$1" = "deploy_prod" ]; then
+    cd ..
     vercel --prod ;
 fi
 if [ "$1" = "rename_staging" ]; then
+    cd ..
     vercel alias $2 ${APP_NAME}-staging-tomkat-cr.vercel.app
 fi

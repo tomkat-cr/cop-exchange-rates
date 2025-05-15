@@ -5,8 +5,9 @@ setup(
     version="1.0.0",
     author="Carlos J. Ramirez",
     author_email="cramirez@mediabros.com",
-    description="A Python module to get COP (Colombian Pesos) to USD exchange rates",
+    description="A Python module to get COP (Colombian Pesos) to " +
+                "USD exchange rates",
     packages=["cop-exchange-rates"],
-    install_requires=["requests", "beautifulsoup4", "a2wsgi"],
+    install_requires=["requests", "fastapi", "beautifulsoup4", "a2wsgi"],
     zip_safe=False
 )

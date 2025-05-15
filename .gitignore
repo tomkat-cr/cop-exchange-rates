@@ -143,3 +143,5 @@ src/lib64
 .env-staging
 .env-prod
 .env-production
+
+node_modules
