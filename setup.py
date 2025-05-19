@@ -2,12 +2,11 @@ from setuptools import setup
 
 setup(
     name="cop-exchange-rates",
-    version="1.0.0",
+    version="1.1.0",
     author="Carlos J. Ramirez",
     author_email="cramirez@mediabros.com",
-    description="A Python module to get COP (Colombian Pesos) to " +
-                "USD exchange rates",
+    description="Mediabros Currency Exchange API series / Colombian Pesos",
     packages=["cop-exchange-rates"],
-    install_requires=["requests", "fastapi", "beautifulsoup4", "a2wsgi"],
+    install_requires=["requests", "beautifulsoup4"],
     zip_safe=False
 )

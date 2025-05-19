@@ -1,8 +1,8 @@
 {
   "name": "cop-exchange-rates",
-  "version": "1.0.0",
-  "description": "API to get Colombian Pesos currency exchange rates with Python",
-  "main": "src/index.py",
+  "version": "1.1.0",
+  "description": "Mediabros Currency Exchange API series / Colombian Pesos",
+  "main": "cop-exchange-rates/index.py",
   "scripts": {
     "deactivate": "sh run.sh deactivate",
     "pipfile": "sh run.sh pipfile",
@@ -23,7 +23,12 @@
     "python",
     "api",
     "python3",
-    "webscraping"
+    "webscraping",
+    "currency",
+    "exchange",
+    "exchange rates",
+    "colombian pesos",
+    "cop"
   ],
   "author": "Carlos J. Ramirez",
   "license": "MIT",
