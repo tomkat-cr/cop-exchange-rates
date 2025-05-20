@@ -3,7 +3,7 @@ import sys
 from fastapi import FastAPI
 from a2wsgi import ASGIMiddleware
 
-from get_cop_exchange_rates import get_cop_exchange_rates, \
+from cop import get_cop_exchange_rates, \
     get_google_cop, get_official_cop
 
 

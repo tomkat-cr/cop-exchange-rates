@@ -1,5 +1,5 @@
 [project]
-name = "cop-exchange-rates"
+name = "cop_exchange_rates"
 version = "1.0.0"
 authors = [
     { name="Carlos J. Ramirez", email="tomkat_cr@yahoo.com" }
@@ -28,7 +28,7 @@ Homepage = "https://github.com/tomkat-cr/cop-exchange-rates"
 Issues = "https://github.com/tomkat-cr/cop-exchange-rates/issues"
 
 [tool.poetry]
-name = "cop-exchange-rates"
+name = "cop_exchange_rates"
 version = "1.0.0"
 description = "Mediabros Currency Exchange API series / Colombian Pesos"
 authors = ["Carlos J. Ramirez <tomkat_cr@yahoo.com>"]
