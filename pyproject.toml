@@ -37,7 +37,7 @@ readme = "README.md"
 repository = "https://github.com/tomkat-cr/cop-exchange-rates.git"
 homepage = "https://github.com/tomkat-cr/cop-exchange-rates"
 packages = [
-    { include = "cop-exchange-rates" }
+    { include = "cop_exchange_rates" }
 ]
 
 [tool.poetry.dependencies]
