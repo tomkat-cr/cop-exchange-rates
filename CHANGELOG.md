@@ -17,17 +17,17 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a Ch
 ### Breaks
 
 
-## 1.1.0 (2025-05-20)
+## 1.1.0 (2025-07-26)
 ---
 
 ### New
-Add poetry configuration to make the project ready to be used as a package.
+Add poetry configuration to make the project ready to be used as a package [GS-204].
 
 ### Changes
-Rename "src" folder to "cop_exchange_rates" to match the project name.
+Rename "src" folder to "cop_exchange_rates" to match the project name [GS-204].
 
 ### Fixes
-Update dependencies to latest versions to fix Snyk alerts.
+Update dependencies to latest versions to fix Snyk alerts [GS-204].
 
 
 ## 1.0.0 (2023-01-22)

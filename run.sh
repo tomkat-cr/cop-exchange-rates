@@ -39,7 +39,7 @@ run_venv() {
     fi
 }
 
-APP_DIR='cop-exchange-rates'
+APP_DIR='cop_exchange_rates'
 ENV_FILESPEC=""
 if [ -f "./.env" ]; then
     ENV_FILESPEC="./.env"

@@ -2,7 +2,7 @@
   "name": "cop-exchange-rates",
   "version": "1.1.0",
   "description": "Mediabros Currency Exchange API series / Colombian Pesos",
-  "main": "cop-exchange-rates/index.py",
+  "main": "cop_exchange_rates/index.py",
   "scripts": {
     "deactivate": "sh run.sh deactivate",
     "pipfile": "sh run.sh pipfile",

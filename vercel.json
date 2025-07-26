@@ -1,16 +1,16 @@
 {
     "version": 2,
-    "outputDirectory": "cop-exchange-rates",
+    "outputDirectory": "cop_exchange_rates",
     "builds": [
         {
-            "src": "cop-exchange-rates/index.py",
+            "src": "cop_exchange_rates/index.py",
             "use": "@vercel/python"
         }
     ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "cop-exchange-rates/index.py"
+            "dest": "cop_exchange_rates/index.py"
         }
     ]
 }
