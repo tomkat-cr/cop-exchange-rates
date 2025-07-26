@@ -1,4 +1,5 @@
 import sys
+import json
 
 from fastapi import FastAPI
 from a2wsgi import ASGIMiddleware
@@ -21,7 +22,7 @@ def get_command_line_args():
 params = get_command_line_args()
 if params['mode'] == 'cli':
     apiResponse = get_cop_exchange_rates()
-    print(apiResponse)
+    print(json.dumps(apiResponse))
 
 api = FastAPI()
 app = ASGIMiddleware(api)

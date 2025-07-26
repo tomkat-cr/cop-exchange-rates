@@ -22,6 +22,8 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a Ch
 
 ### New
 Add poetry configuration to make the project ready to be used as a package [GS-204].
+Add JSON formatting for CLI output [GS-204].
+Add request timeout handling [GS-204].
 
 ### Changes
 Rename "src" folder to "cop_exchange_rates" to match the project name [GS-204].

@@ -80,7 +80,11 @@ if [[ "$1" = "run_module" || "$1" = "run" || "$1" = "" ]]; then
     echo "Run module only..."
     echo "pwd: $(pwd)"
     echo ""
-    python -m index cli
+    if jq --version > /dev/null 2>&1; then
+        python -m index cli | jq .
+    else
+        python -m index cli
+    fi
     echo ""
     echo "Done..."
 fi

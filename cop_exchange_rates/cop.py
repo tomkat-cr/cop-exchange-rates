@@ -8,6 +8,8 @@ import warnings
 from bs4 import BeautifulSoup
 import requests
 
+DEFAULT_TIMEOUT = 5    # seconds
+
 
 # Send telegram messages
 
@@ -19,7 +21,7 @@ def send_tg_message(message):
         # Send the message
         url = 'https://api.telegram.org/bot' + bot_token + \
             '/sendMessage?chat_id=' + user_id + '&text=' + str(message)
-        response = requests.get(url)
+        response = requests.get(url, timeout=DEFAULT_TIMEOUT)
         print(response.content)
     except Exception as err:
         print(f'ERROR on send_tg_message: {str(err)}')
